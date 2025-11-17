@@ -11,3 +11,5 @@ data:
     codebook: codebook_df.rmd
 checksums:
   df.csv: d095070c2bea748cc25c29ea872f3302
+  manuscript/tab_coef.csv: 7b31eb5bf4594bb00b99bb40271806e8
+endpoints: manuscript/tab_coef.csv

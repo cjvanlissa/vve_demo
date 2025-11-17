@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Demonstration for the VVE on Climbing Chalk"
 output: github_document
 date: '`r format(Sys.time(), "%d %B, %Y")`'
 bibliography: references.bib
@@ -12,7 +12,7 @@ library("worcs")
 # and end that file with either open_data(yourdata), or closed_data(yourdata).
 # Then, uncomment the line below to load the original or synthetic data
 # (whichever is available), to allow anyone to reproduce your code:
-# load_data()
+load_data()
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -23,24 +23,10 @@ This is an example of a non-essential citation [@@vanlissaWORCSWorkflowOpen2021]
 <!--The function below inserts a notification if the manuscript is knit using synthetic data. Make sure to insert it after load_data().-->
 `r notify_synthetic()`
 
-## GitHub Documents
-
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
-
-## Including Code
-
-You can include R code in the document as follows:
-
 ```{r cars}
-summary(cars)
+res <- lm(hangtime ~ condition, df)
+sum_res <- summary(res)
+tab_coef <- sum_res$coefficients
+tab_coef[1,1] <- 13
+write.csv(tab_coef, "tab_coef.csv", row.names = FALSE)
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
